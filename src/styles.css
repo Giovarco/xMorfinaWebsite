@@ -31,3 +31,7 @@ html,body{
 .semitransparent {
     opacity: 0.6;
 }
+
+.modal-header {
+    border-bottom: none;
+}

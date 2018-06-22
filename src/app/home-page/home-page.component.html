@@ -13,42 +13,46 @@
 
   <body>
 
+    <!-- Drawings showcase -->
     <div class="container">
 
       <div class="row">
 
         <div *ngFor="let drawing of drawings" class="col-sm-3 px-2 mb-3">
-          <img src="/assets/drawings/{{drawing.file}}" class="border border-dark w-100 h-100">
+          <img (click)="openModal(content, drawing)" src="/assets/drawings/{{drawing.file}}" class="border border-dark w-100 h-100">
         </div>
 
       </div>
 
     </div>
 
-    <!-- Button trigger modal -->
+    <!-- Angular Modal -->
     <ng-template #content let-c="close" let-d="dismiss">
 
-      <!--
+      
       <div class="modal-header">
-        <h4 class="modal-title">Profile update</h4>
         <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      -->
+      
 
       <div class="container w-100 h-100">
 
         <div class="row align-items-center h-100">
 
+          <!-- Drawing Image -->
           <div class="col-sm-6">
               <div class="modal-body">
-                  <img src="/assets/drawings/PacificRim.jpg" class="border border-dark w-100 h-100">
-                </div>
+                <img src="/assets/drawings/{{selectedDrawing.file}}" class="border border-dark w-100 h-100">
+              </div>
           </div>
-          <div class="col-sm-6">
-            <h1> Pacific Rim </h1>
 
+          <!-- Drawing Information -->
+          <div class="col-sm-6">
+            <h1>{{selectedDrawing.title}}</h1>
+
+            <!--
             <h2>On sale in:</h2>
             
             <p>Not on sale</p>
@@ -58,25 +62,20 @@
             </div>
             
             <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
-            
-            <p class="text-secondary">#ILoveBoobs, #Escile, #WLF</p>
+            -->
+
+            <p class="text-secondary">{{selectedDrawing.tags.join(", ")}}</p>
 
             <img src="/assets/icons/e-mail.png" class="icon">
             <span class="align-middle">Contact Me</span>
-
 
           </div>
 
         </div>
 
       </div>
-
-
-      
-    </ng-template>
     
-    <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
-    
+    </ng-template>    
 
     <!-- Optional JavaScript -->
 
