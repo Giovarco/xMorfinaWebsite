@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from "../../environments/environment";
 import { DrawingListService } from "../drawing-list.service";
+import { Drawing } from "../../classDefinitions/Drawing";
 
 @Component({
   selector: 'app-home-page',
@@ -12,8 +13,8 @@ import { DrawingListService } from "../drawing-list.service";
 
 export class HomePageComponent implements OnInit {
 
-  drawings;
-  selectedDrawing;
+  drawings: Drawing[];
+  selectedDrawing: Drawing;
 
   constructor(private modalService: NgbModal, private drawingListService: DrawingListService) {}
 

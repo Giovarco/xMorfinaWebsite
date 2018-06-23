@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Drawing } from "../classDefinitions/Drawing";
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class DrawingListService {
 
-  drawings = [
+  drawings: Drawing[] = [
 
     {
       "file" : "DarthVader.jpg",
