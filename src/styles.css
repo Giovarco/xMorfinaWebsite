@@ -5,3 +5,16 @@
 * {
     font-family: 'Josefin Sans', sans-serif;
 }
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    .text-sm-center {
+        text-align: center !important;
+    }
+
+    .h-sm-auto {
+        height: auto !important;
+    }
+
+}
