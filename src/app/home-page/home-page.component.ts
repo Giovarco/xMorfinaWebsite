@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
+  encapsulation: ViewEncapsulation.None, // Needed to apply correctly .modal-dialog style
   styleUrls: ['./home-page.component.css']
 })
 
@@ -58,7 +59,6 @@ export class HomePageComponent implements OnInit {
 
   openModal(content, drawing) {
     this.selectedDrawing = drawing;
-    console.log(this.selectedDrawing);
     this.modalService.open(content);
   }
 
