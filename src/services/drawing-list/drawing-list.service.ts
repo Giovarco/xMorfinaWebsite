@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Drawing } from "../classDefinitions/Drawing";
+import { Drawing } from "../../classDefinitions/Drawing";
 
 @Injectable({
   providedIn: 'root'
