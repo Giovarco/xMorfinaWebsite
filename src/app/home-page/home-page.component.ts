@@ -25,7 +25,7 @@ export class HomePageComponent implements OnInit {
   /**
    * This function opens the drawing detail modal
    */
-  openModal(content, drawing: Drawing) {
+  openModal(content: any, drawing: Drawing) {
     this.selectedDrawing = drawing;
     this.modalService.open(content);
   }
