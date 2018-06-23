@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DrawingListService } from "../drawing-list.service";
 import { Drawing } from "../../classDefinitions/Drawing";
-import { FacebookPageOpenerService } from "../facebook-page-opener.service";
+import { FacebookPageOpenerService } from "../../services/facebook-page-opener/facebook-page-opener.service";
 
 @Component({
   selector: 'app-home-page',

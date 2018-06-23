@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FacebookPageOpenerService } from "../facebook-page-opener.service";
+import { FacebookPageOpenerService } from "../../services/facebook-page-opener/facebook-page-opener.service";
 
 @Component({
   selector: 'app-contact-page',
