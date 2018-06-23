@@ -5,22 +5,3 @@
 * {
     font-family: 'Josefin Sans', sans-serif;
 }
-
-.logoText {
-    font-size: 3.25rem;
-}
-
-#navBar {
-
-    padding-right: 90px !important;
-    padding-left: 90px !important;
-
-    padding-top: 25px !important;
-    padding-bottom: 10px !important;
-
-    border-bottom: none !important;
-}
-
-.navBarButtonText {
-    font-size: 18px;
-}
