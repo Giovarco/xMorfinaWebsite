@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { environment } from "../../environments/environment";
 
 @Component({
   selector: 'app-home-page',
@@ -63,7 +64,7 @@ export class HomePageComponent implements OnInit {
   }
 
   openXMorfinaPage() {
-    window.open('https://www.facebook.com/XMorfinas-World-1553283851576465/', '_blank');
+    window.open(environment.facebookPageURL, '_blank');
   }
 
 }
