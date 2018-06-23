@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from "./home-page/home-page.component";
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ContactPageComponent } from "./contact-page/contact-page.component";
 
 const routes: Routes = [
-  // If the user tries to accessa a non-existing end-point, redirect to Home Page
-  { path: '**', redirectTo: '/homepage', pathMatch: 'full' },
   { path : "homepage", component : HomePageComponent },
+  { path : "contact", component : ContactPageComponent },
+  { path: '**', redirectTo: '/homepage'}
 ];
 
 @NgModule({
