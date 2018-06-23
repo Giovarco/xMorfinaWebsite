@@ -66,8 +66,12 @@
 
             <p class="text-secondary">{{selectedDrawing.tags.join(", ")}}</p>
 
-            <img src="/assets/icons/e-mail.png" class="icon">
-            <span class="align-middle">Contact Me</span>
+            <!-- Contact Me -->
+            <a [routerLink]="" (click)="openXMorfinaPage()">
+              <img src="/assets/icons/e-mail.png" class="icon">
+              <span class="align-middle">Contact Me</span>
+            </a>
+            
 
           </div>
 

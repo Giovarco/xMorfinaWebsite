@@ -62,4 +62,8 @@ export class HomePageComponent implements OnInit {
     this.modalService.open(content);
   }
 
+  openXMorfinaPage() {
+    window.open('https://www.facebook.com/XMorfinas-World-1553283851576465/', '_blank');
+  }
+
 }
