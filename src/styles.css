@@ -1,2 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.logoText {
+    font-size: 3.25rem;
+}
+
+#navBar {
+
+    padding-right: 90px !important;
+    padding-left: 90px !important;
+
+    padding-top: 25px !important;
+    padding-bottom: 10px !important;
+
+    border-bottom: none !important;
+}
+
+.navBarButtonText {
+    font-size: 18px;
+}
