@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FacebookPageOpenerService } from "../facebook-page-opener.service";
 
 @Component({
   selector: 'app-contact-page',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private facebookPageOpenerService: FacebookPageOpenerService) { }
 
   ngOnInit() {
   }

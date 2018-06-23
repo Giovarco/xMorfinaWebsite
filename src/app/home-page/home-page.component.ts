@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { environment } from "../../environments/environment";
 import { DrawingListService } from "../drawing-list.service";
 import { Drawing } from "../../classDefinitions/Drawing";
+import { FacebookPageOpenerService } from "../facebook-page-opener.service";
 
 @Component({
   selector: 'app-home-page',
@@ -16,7 +16,9 @@ export class HomePageComponent implements OnInit {
   drawings: Drawing[];
   selectedDrawing: Drawing;
 
-  constructor(private modalService: NgbModal, private drawingListService: DrawingListService) {}
+  constructor(private modalService: NgbModal,
+              private drawingListService: DrawingListService,
+              private facebookPageOpenerService: FacebookPageOpenerService) {}
 
   ngOnInit() {
     this.drawings = this.drawingListService.getDrawingList();
@@ -28,10 +30,6 @@ export class HomePageComponent implements OnInit {
   openModal(content: any, drawing: Drawing) {
     this.selectedDrawing = drawing;
     this.modalService.open(content);
-  }
-
-  openXMorfinaPage() {
-    window.open(environment.facebookPageURL, '_blank');
   }
 
 }
