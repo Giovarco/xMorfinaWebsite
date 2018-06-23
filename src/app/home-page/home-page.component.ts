@@ -22,7 +22,10 @@ export class HomePageComponent implements OnInit {
     this.drawings = this.drawingListService.getDrawingList();
   }
 
-  openModal(content, drawing) {
+  /**
+   * This function opens the drawing detail modal
+   */
+  openModal(content, drawing: Drawing) {
     this.selectedDrawing = drawing;
     this.modalService.open(content);
   }

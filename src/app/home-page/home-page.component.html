@@ -18,6 +18,7 @@
 
       <div class="row">
 
+        <!-- Drawing box -->
         <div *ngFor="let drawing of drawings" class="col-sm-3 px-2 mb-3">
           <img (click)="openModal(content, drawing)" src="/assets/drawings/{{drawing.file}}" class="border border-dark w-100 h-100">
         </div>
@@ -26,17 +27,17 @@
 
     </div>
 
-    <!-- Angular Modal -->
+    <!-- Drawing Detail Modal -->
     <ng-template #content let-c="close" let-d="dismiss">
 
-      
+      <!-- Header -->
       <div class="modal-header">
         <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      
 
+      <!-- Content -->
       <div class="container w-100 h-100">
 
         <div class="row align-items-center h-100">
@@ -72,7 +73,6 @@
               <span class="align-middle">Contact Me</span>
             </a>
             
-
           </div>
 
         </div>
@@ -81,12 +81,6 @@
     
     </ng-template>    
 
-    <!-- Optional JavaScript -->
-
   </body>
 
 </html>
-
-<!-- 
-<img *ngFor="let drawing of drawings" src="{{drawing.file}} {{drawing.title}}">
--->
