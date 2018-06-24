@@ -21,8 +21,13 @@ export class ContactPageComponent implements OnInit {
               private tabOpenerService: TabOpenerService) { }
 
   ngOnInit() {
+
     this.collaboratorNames = this.collaboratorListService.getNames();
-    this.collaboratorList = this.collaboratorListService.getList();
+
+    this.collaboratorListService.getList().subscribe(data => {
+      this.collaboratorList = data;
+    });
+    
   }
 
 }
