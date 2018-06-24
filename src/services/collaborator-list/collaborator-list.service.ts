@@ -27,7 +27,7 @@ export class CollaboratorListService {
     "Loopslike" : "Loopslike"
   };
   
-  collaboratorListURL = "/assets/data/collaborators.json";
+  collaboratorListURL = "/assets/data/collaboratorsList.json";
   list: Collaborator[];
 
   constructor(private http: HttpClient) { }
