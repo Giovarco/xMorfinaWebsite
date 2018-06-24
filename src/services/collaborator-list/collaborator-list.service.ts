@@ -63,7 +63,7 @@ export class CollaboratorListService {
     },
     {
       "name" : CollaboratorListService.names.RIPTapparel,
-      "website" : "",
+      "website" : "https://www.riptapparel.com",
       "logoFile" : CollaboratorListService.names.RIPTapparel + ".png"
     },
     {
