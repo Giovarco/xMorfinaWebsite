@@ -33,20 +33,11 @@
       <div class="row">
         <div class="col">
             <h1>Collaboration</h1>
-            <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
-            <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
-            <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
-            <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
-            <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
-            <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
-            <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
-            <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
-            <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
-            <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
-            <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
-            <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
-            <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
-            <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
+            <ng-container *ngFor="let collaborator of collaboratorList" >
+                <a href="{{collaborator.website}}">
+                  <img src="/assets/logos/{{collaborator.logoFile}}" class="border border-dark icon mr-2 mb-2">
+                </a>
+            </ng-container>
         </div>
       </div>
 
