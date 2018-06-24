@@ -34,7 +34,7 @@
         <div class="col">
             <h1>Collaboration</h1>
             <ng-container *ngFor="let collaborator of collaboratorList" >
-                <a href="{{collaborator.website}}">
+                <a [routerLink]="" (click)="this.tabOpenerService.open(collaborator.website);">
                   <img src="/assets/logos/{{collaborator.logoFile}}" class="border border-dark icon mr-2 mb-2">
                 </a>
             </ng-container>
