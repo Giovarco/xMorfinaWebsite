@@ -24,7 +24,9 @@ export class HomePageComponent implements OnInit {
               private tabOpenerService: TabOpenerService) {}
 
   ngOnInit() {
-    this.drawings = this.drawingListService.getDrawingList();
+    this.drawingListService.getDrawingList().subscribe( data => {
+      this.drawings = data;
+    });
   }
 
   /**
