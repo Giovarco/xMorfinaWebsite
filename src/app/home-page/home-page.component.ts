@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DrawingListService } from "../../services/drawing-list/drawing-list.service";
-import { Drawing } from "../../classDefinitions/Drawing";
+import { Drawing } from "../../interfaces/Drawing";
 import { FacebookPageOpenerService } from "../../services/facebook-page-opener/facebook-page-opener.service";
 
 @Component({
