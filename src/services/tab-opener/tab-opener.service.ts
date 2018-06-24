@@ -7,7 +7,7 @@ export class TabOpenerService {
 
   constructor() { }
 
-  open(link) {
+  open(link: string) {
     window.open(link, '_blank');
   }
 

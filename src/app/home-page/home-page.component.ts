@@ -2,7 +2,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DrawingListService } from "../../services/drawing-list/drawing-list.service";
 import { Drawing } from "../../interfaces/Drawing";
-import { FacebookPageOpenerService } from "../../services/facebook-page-opener/facebook-page-opener.service";
+import { TabOpenerService } from "../../services/tab-opener/tab-opener.service";
+import { environment } from "../../environments/environment";
 
 @Component({
   selector: 'app-home-page',
@@ -16,9 +17,11 @@ export class HomePageComponent implements OnInit {
   drawings: Drawing[];
   selectedDrawing: Drawing;
 
+  facebookPageURL: string = environment.facebookPageURL;
+
   constructor(private modalService: NgbModal,
               private drawingListService: DrawingListService,
-              private facebookPageOpenerService: FacebookPageOpenerService) {}
+              private tabOpenerService: TabOpenerService) {}
 
   ngOnInit() {
     this.drawings = this.drawingListService.getDrawingList();

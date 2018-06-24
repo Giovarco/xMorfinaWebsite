@@ -15,11 +15,8 @@
     "lib": [
       "es2017",
       "dom"
-    ]
-    /*
-    ,
+    ],
     "noImplicitAny": true,
     "noImplicitReturns" : true
-    */
   },
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FacebookPageOpenerService } from "../../services/facebook-page-opener/facebook-page-opener.service";
 import { CollaboratorListService } from "../../services/collaborator-list/collaborator-list.service";
 import { TabOpenerService } from "../../services/tab-opener/tab-opener.service";
 import { Names } from '../../interfaces/Names';
@@ -16,10 +15,9 @@ export class ContactPageComponent implements OnInit {
   collaboratorNames: Names;
   collaboratorList: Collaborator[];
 
-  facebookPageURL = environment.facebookPageURL;
+  facebookPageURL: string = environment.facebookPageURL;
 
-  constructor(private facebookPageOpenerService: FacebookPageOpenerService,
-              private collaboratorListService: CollaboratorListService,
+  constructor(private collaboratorListService: CollaboratorListService,
               private tabOpenerService: TabOpenerService) { }
 
   ngOnInit() {

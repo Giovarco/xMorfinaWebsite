@@ -72,7 +72,7 @@
             <p class="text-secondary">{{selectedDrawing.tags.join(", ")}}</p>
 
             <!-- Contact Me -->
-            <a [routerLink]="" (click)="this.facebookPageOpenerService.open();">
+            <a [routerLink]="" (click)="this.tabOpenerService.open(facebookPageURL);">
               <img src="/assets/icons/e-mail.png" class="icon">
               <span class="align-middle">Contact Me</span>
             </a>
