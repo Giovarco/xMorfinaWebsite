@@ -1,90 +1,85 @@
-<!doctype html>
-<html lang="en">
-  <head>
+<!-- Navigation Bar -->
+<app-navingation-bar></app-navingation-bar>
 
-    <!-- Bootstrap meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Drawings showcase -->
+<div class="container">
 
-    <!-- Title -->
-    <title>Home Page</title>
+  <!-- Search by tags -->
+  <div class="row">
+    <div class="col">
+      <input (keyup)="handleInputTags($event)" type="text" class="float-right" placeholder="tag1; tag2;">
+    </div>
+  </div>
 
-  </head>
+  <!-- Drawing boxes -->
+  <div class="row">
 
-  <body>
-
-    <!-- Navigation Bar -->
-    <app-navingation-bar></app-navingation-bar>
-
-    <!-- Drawings showcase -->
-    <div class="container">
-
-      <div class="row">
-
-        <!-- Drawing box -->
+    <ng-container *ngIf="!useFilteredDrawings; else elseBlock">
         <div *ngFor="let drawing of drawings" class="col-sm-3 px-2 mb-3">
           <img (click)="openModal(content, drawing)" src="/assets/drawings/{{drawing.file}}" class="border border-dark w-100 h-100">
         </div>
+    </ng-container>
+    <ng-template #elseBlock>
+        <div *ngFor="let drawing of filteredDrawings" class="col-sm-3 px-2 mb-3">
+          <img (click)="openModal(content, drawing)" src="/assets/drawings/{{drawing.file}}" class="border border-dark w-100 h-100">
+        </div>
+    </ng-template>
 
+  </div>
+
+</div>
+
+<!-- Drawing Detail Modal -->
+<ng-template #content let-c="close" let-d="dismiss">
+
+  <!-- Header -->
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <!-- Content -->
+  <div class="container w-100 h-100 h-sm-auto">
+
+    <div class="row align-items-center h-100">
+
+      <!-- Drawing Image -->
+      <div class="col-sm-6">
+          <div class="modal-body">
+            <img src="/assets/drawings/{{selectedDrawing.file}}" class="border border-dark w-100 h-100">
+          </div>
+      </div>
+
+      <!-- Drawing Information -->
+      <div class="col-sm-6 text-sm-center">
+
+        <h1>{{selectedDrawing.title}}</h1>
+
+        <!--
+        <h2>On sale in:</h2>
+        
+        <p>Not on sale</p>
+
+        <div class="disabledImageWrapper mr-2">
+          <img src="/assets/logos/TeeFury2.png" class="border border-dark icon semitransparent">
+        </div>
+        
+        <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
+        -->
+
+        <p class="text-secondary">{{selectedDrawing.tags.join(", ")}}</p>
+
+        <!-- Contact Me -->
+        <a [routerLink]="" (click)="this.tabOpenerService.open(facebookPageURL);">
+          <img src="/assets/icons/e-mail.png" class="icon">
+          <span class="align-middle">Contact Me</span>
+        </a>
+        
       </div>
 
     </div>
 
-    <!-- Drawing Detail Modal -->
-    <ng-template #content let-c="close" let-d="dismiss">
+  </div>
 
-      <!-- Header -->
-      <div class="modal-header">
-        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <!-- Content -->
-      <div class="container w-100 h-100 h-sm-auto">
-
-        <div class="row align-items-center h-100">
-
-          <!-- Drawing Image -->
-          <div class="col-sm-6">
-              <div class="modal-body">
-                <img src="/assets/drawings/{{selectedDrawing.file}}" class="border border-dark w-100 h-100">
-              </div>
-          </div>
-
-          <!-- Drawing Information -->
-          <div class="col-sm-6 text-sm-center">
-
-            <h1>{{selectedDrawing.title}}</h1>
-
-            <!--
-            <h2>On sale in:</h2>
-            
-            <p>Not on sale</p>
-
-            <div class="disabledImageWrapper mr-2">
-              <img src="/assets/logos/TeeFury2.png" class="border border-dark icon semitransparent">
-            </div>
-            
-            <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
-            -->
-
-            <p class="text-secondary">{{selectedDrawing.tags.join(", ")}}</p>
-
-            <!-- Contact Me -->
-            <a [routerLink]="" (click)="this.tabOpenerService.open(facebookPageURL);">
-              <img src="/assets/icons/e-mail.png" class="icon">
-              <span class="align-middle">Contact Me</span>
-            </a>
-            
-          </div>
-
-        </div>
-
-      </div>
-    
-    </ng-template>    
-
-  </body>
-
-</html>
+</ng-template>
