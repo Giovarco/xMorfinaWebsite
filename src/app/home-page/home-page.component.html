@@ -15,14 +15,26 @@
   <div class="row">
 
     <ng-container *ngIf="!useFilteredDrawings; else elseBlock">
-        <div *ngFor="let drawing of drawings" class="col-sm-3 px-2 mb-3">
-          <img (click)="openModal(content, drawing)" src="/assets/drawings/{{drawing.file}}" class="border border-dark w-100 h-100">
-        </div>
+
+      <ng-container *ngIf="drawings.length > 0; else noResultFound">
+          <div *ngFor="let drawing of drawings" class="col-sm-3 px-2 mb-3">
+            <img (click)="openModal(content, drawing)" src="/assets/drawings/{{drawing.file}}" class="border border-dark w-100 h-100">
+          </div>
+      </ng-container>
+
     </ng-container>
     <ng-template #elseBlock>
-        <div *ngFor="let drawing of filteredDrawings" class="col-sm-3 px-2 mb-3">
-          <img (click)="openModal(content, drawing)" src="/assets/drawings/{{drawing.file}}" class="border border-dark w-100 h-100">
-        </div>
+
+        <ng-container *ngIf="filteredDrawings.length > 0; else noResultFound">
+            <div *ngFor="let drawing of filteredDrawings" class="col-sm-3 px-2 mb-3">
+              <img (click)="openModal(content, drawing)" src="/assets/drawings/{{drawing.file}}" class="border border-dark w-100 h-100">
+            </div>
+        </ng-container>
+
+    </ng-template>
+
+    <ng-template #noResultFound>
+      No Results
     </ng-template>
 
   </div>
