@@ -4,6 +4,7 @@ import { DrawingListService } from "../../services/drawing-list/drawing-list.ser
 import { Drawing } from "../../interfaces/Drawing";
 import { TabOpenerService } from "../../services/tab-opener/tab-opener.service";
 import { environment } from "../../environments/environment";
+import { DrawingsByTagFilterService } from "../../services/drawings-by-tag-filter/drawings-by-tag-filter.service";
 
 @Component({
   selector: 'app-home-page',
@@ -51,21 +52,7 @@ export class HomePageComponent implements OnInit {
     if ( inputValue === "" ) {
       this.useFilteredDrawings = false;
     } else {
-      this.filteredDrawings = [
-        {
-            "file" : "DarthVader.jpg",
-            "title" : "Darth Cupid",
-            "tags" : ["tag1", "tag2", "tag3"],
-            "date" : "2018-01-01"
-        },
-    
-        {
-            "file" : "Jack.jpg",
-            "title" : "My name is Jack",
-            "tags" : ["tag1", "tag2", "tag3"],
-            "date" : "2018-01-04"
-        }
-      ];
+      this.filteredDrawings = DrawingsByTagFilterService.filterByTag(this.drawings, inputValue);
       this.useFilteredDrawings = true;
     }
     
