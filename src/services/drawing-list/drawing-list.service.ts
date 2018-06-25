@@ -11,6 +11,37 @@ export class DrawingListService {
 
   drawingsURL = "/assets/data/drawings.json";
 
+  static orderByMostRecent(drawings: Drawing[]): Drawing[] {
+
+    // Sort elements
+    drawings.sort(function(a, b) {
+
+      // Get date strings
+      const dateString1 = a.date;
+      const dateString2 = b.date;
+
+      // Get date objects
+      const dateObject1 = new Date(a.date).getTime();
+      const dateObject2 = new Date(b.date).getTime();
+
+      // Check if these dates are not valid
+      if (isNaN(dateObject1) || isNaN(dateObject2)) {
+        return 0;
+      }
+
+      // Compare two dates
+      if ( dateObject1 >= dateObject2 ) {
+        return -1;
+      } else {
+        return 1;
+      }
+
+    });
+
+    return drawings;
+
+  }
+  
   constructor(private http: HttpClient) { }
 
   getDrawingList(): Observable<Drawing[]> {

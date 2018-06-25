@@ -26,6 +26,7 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
     this.drawingListService.getDrawingList().subscribe( data => {
       this.drawings = data;
+      DrawingListService.orderByMostRecent(this.drawings);
     });
   }
 
