@@ -30,4 +30,8 @@ export class ContactPageComponent implements OnInit {
     
   }
 
+  openFacebook(): void {
+    this.tabOpenerService.open(this.facebookPageURL);
+  }
+
 }

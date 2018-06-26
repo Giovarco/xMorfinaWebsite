@@ -61,4 +61,8 @@ export class HomePageComponent implements OnInit {
     
   }
 
+  openFacebook(): void {
+    this.tabOpenerService.open(this.facebookPageURL);
+  }
+
 }
