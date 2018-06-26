@@ -20,6 +20,7 @@ export class HomePageComponent implements OnInit {
   useFilteredDrawings = false;
   
   selectedDrawing: Drawing;
+  selectedDrawingTags: string;
 
   facebookPageURL: string = environment.facebookPageURL;
 
@@ -38,6 +39,8 @@ export class HomePageComponent implements OnInit {
    * This function opens the drawing detail modal
    */
   openModal(content: any, drawing: Drawing) {
+    const drawingTagsWithHashtag = drawing.tags.map(tag => "#" + tag);
+    this.selectedDrawingTags = drawingTagsWithHashtag.join(", ");
     this.selectedDrawing = drawing;
     this.modalService.open(content);
   }
