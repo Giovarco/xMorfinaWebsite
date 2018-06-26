@@ -2,42 +2,42 @@
     {
         "file" : "DarthVader.jpg",
         "title" : "Darth Cupid",
-        "tags" : ["tag2", "tag3"],
+        "tags" : ["tag22", "tag33"],
         "date" : "2018-01-01"
     },
 
     {
         "file" : "Jack.jpg",
         "title" : "My name is Jack",
-        "tags" : ["tag1", "tag3"],
+        "tags" : ["tag11", "tag33"],
         "date" : "2018-01-04"
     },
 
     {
         "file" : "PacificRim.jpg",
         "title" : "Red Pacifica",
-        "tags" : ["tag1", "tag2"],
+        "tags" : ["tag11", "tag22"],
         "date" : "2018-01-02"
     },
 
     {
         "file" : "Pinocchio.jpg",
         "title" : "In the whale",
-        "tags" : ["tag2", "tag3"],
+        "tags" : ["tag22", "tag33"],
         "date" : "2018-01-05"
     },
 
     {
         "file" : "Snoopy.jpg",
         "title" : "Chewpy",
-        "tags" : ["tag1", "tag3"],
+        "tags" : ["tag11", "tag33"],
         "date" : "2018-01-03"
     },
 
     {
         "file" : "Spyro.jpg",
         "title" : "Purple Dragon",
-        "tags" : ["tag1", "tag2"],
+        "tags" : ["tag11", "tag22"],
         "date" : "2018-01-06"
     }
 ]
