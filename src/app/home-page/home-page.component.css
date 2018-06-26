@@ -26,3 +26,12 @@
 .modal-header {
     border-bottom: none;
 }
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    .searchByTagInput {
+        width: 50%;
+    }
+
+}

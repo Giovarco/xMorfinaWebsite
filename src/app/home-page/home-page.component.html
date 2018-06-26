@@ -5,9 +5,12 @@
 <div class="container">
 
   <!-- Search by tags -->
-  <div class="row mb-2">
-    <div class="col pr-2">
-      <input (keyup)="handleInputTags($event)" type="text" class="float-right" placeholder="tag1; tag2;">
+  <div class="row mb-3">
+    <div class="col-sm-3 px-2"></div>
+    <div class="col-sm-3 px-2"></div>
+    <div class="col-sm-3 px-2"></div>
+    <div class="col-sm-3 px-2">
+      <input (keyup)="handleInputTags($event)" type="text" class="form-control float-right searchByTagInput" placeholder="tag1; tag2;">
     </div>
   </div>
 
