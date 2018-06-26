@@ -15,7 +15,7 @@ export class DrawingsByTagFilterService {
    */
   static filterByTag(drawings: Drawing[], inputFilter: string): Drawing[] {
 
-    const validTags: Array<string> = this.isValidFilter(inputFilter);
+    const validTags: Array<string> = this.getValidUserFilters(inputFilter);
 
     if (validTags) {
       return DrawingsByTagFilterService.getCoherentDrawings(drawings, validTags);
@@ -92,10 +92,10 @@ export class DrawingsByTagFilterService {
   /**
    * This function return an array of valid tags based on an input string. If an invalid string is given, it returns null
    */
-  private static isValidFilter(inputFilter: string): Array<string> {
+  private static getValidUserFilters(inputFilter: string): Array<string> {
 
     let tags: Array<string> = inputFilter.split(";");
-    tags = tags.map(value => value.trim()); // Trim all array value
+    tags = tags.map(value => value.trim().toLowerCase() ); // Trim all array value
     tags = tags.filter( tag => tag !== "" ); // Remove empty tags
 
     if (tags.length > 0) {
