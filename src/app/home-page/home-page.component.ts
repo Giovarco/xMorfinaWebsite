@@ -15,8 +15,8 @@ import { DrawingsByTagFilterService } from "../../services/drawings-by-tag-filte
 
 export class HomePageComponent implements OnInit {
 
-  drawings: Drawing[]; // All drawings
-  filteredDrawings: Drawing[]; // All drawings filtered by tag
+  drawings: Drawing[] = []; // All drawings
+  filteredDrawings: Drawing[] = []; // All drawings filtered by tag
   useFilteredDrawings = false;
   
   selectedDrawing: Drawing;
