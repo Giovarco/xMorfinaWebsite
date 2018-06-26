@@ -5,8 +5,8 @@
 <div class="container">
 
   <!-- Search by tags -->
-  <div class="row">
-    <div class="col">
+  <div class="row mb-2">
+    <div class="col pr-2">
       <input (keyup)="handleInputTags($event)" type="text" class="float-right" placeholder="tag1; tag2;">
     </div>
   </div>
@@ -34,7 +34,9 @@
     </ng-template>
 
     <ng-template #noResultFound>
-      No Results
+      <div class="w-100 text-center">
+        No Results found :(
+      </div>
     </ng-template>
 
   </div>
