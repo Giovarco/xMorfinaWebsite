@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Drawing } from "../../interfaces/Drawing";
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +49,7 @@ export class DrawingListService {
     return this.http.get<Drawing[]>(this.drawingsURL, {
       headers: {
         'cache-control': 'no-cache',
-        'x-apikey': '32700fa42519f5fd2f41354f36854935a61b6'
+        'x-apikey': environment.keys.restDB
       }
     });
   }
