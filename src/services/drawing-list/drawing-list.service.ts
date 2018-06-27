@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 
 export class DrawingListService {
 
-  drawingsURL = "/assets/data/drawings.json";
+  drawingsURL = "/rest/designs";
 
   static orderByMostRecent(drawings: Drawing[]): Drawing[] {
 
@@ -45,7 +45,12 @@ export class DrawingListService {
   constructor(private http: HttpClient) { }
 
   getDrawingList(): Observable<Drawing[]> {
-    return this.http.get<Drawing[]>(this.drawingsURL);
+    return this.http.get<Drawing[]>(this.drawingsURL, {
+      headers: {
+        'cache-control': 'no-cache',
+        'x-apikey': '32700fa42519f5fd2f41354f36854935a61b6'
+      }
+    });
   }
 
 }

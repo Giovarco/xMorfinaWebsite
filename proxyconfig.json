@@ -1,0 +1,7 @@
+{
+    "/rest/*" : {
+        "target" : "https://xmorfina-5d93.restdb.io",
+        "secure" : false,
+        "changeOrigin" : true
+    }
+}
