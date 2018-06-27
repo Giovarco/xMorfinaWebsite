@@ -1,0 +1,102 @@
+<!-- Navigation Bar -->
+<app-navingation-bar></app-navingation-bar>
+
+<!-- Drawings showcase -->
+<div class="container">
+
+  <!-- Search by tags -->
+  <div class="row mb-3">
+    <div class="col-sm-3 px-2"></div>
+    <div class="col-sm-3 px-2"></div>
+    <div class="col-sm-3 px-2"></div>
+    <div class="col-sm-3 px-2">
+      <input (keyup)="handleInputTags($event)" type="text" class="form-control float-right searchByTagInput" placeholder="tag1; tag2;">
+    </div>
+  </div>
+
+  <!-- Drawing boxes -->
+  <div class="row">
+
+    <ng-container *ngIf="!useFilteredDrawings; else elseBlock">
+
+      <ng-container *ngIf="drawings.length > 0; else noResultFound">
+          <div *ngFor="let drawing of drawings" class="col-sm-3 px-2 mb-3">
+            <img (click)="openModal(content, drawing)" src="/assets/drawings/{{drawing.file}}" class="border border-dark w-100 h-100">
+          </div>
+      </ng-container>
+
+    </ng-container>
+    <ng-template #elseBlock>
+
+        <ng-container *ngIf="filteredDrawings.length > 0; else noResultFound">
+            <div *ngFor="let drawing of filteredDrawings" class="col-sm-3 px-2 mb-3">
+              <img (click)="openModal(content, drawing)" src="/assets/drawings/{{drawing.file}}" class="border border-dark w-100 h-100">
+            </div>
+        </ng-container>
+
+    </ng-template>
+
+    <ng-template #noResultFound>
+      <div class="w-100 text-center">
+        No Results found :(
+      </div>
+    </ng-template>
+
+  </div>
+
+</div>
+
+<!-- Drawing Detail Modal -->
+<ng-template #content let-c="close" let-d="dismiss">
+
+  <!-- Header -->
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <!-- Content -->
+  <div class="container w-100 h-100 h-sm-auto">
+
+    <div class="row align-items-center h-100">
+
+      <!-- Drawing Image -->
+      <div class="col-sm-6">
+          <div class="modal-body">
+            <img src="/assets/drawings/{{selectedDrawing.file}}" class="border border-dark w-100 h-100">
+          </div>
+      </div>
+
+      <!-- Drawing Information -->
+      <div class="col-sm-6 text-sm-center">
+
+        <h1>{{selectedDrawing.title}}</h1>
+
+        <!--
+        <h2>On sale in:</h2>
+        
+        <p>Not on sale</p>
+
+        <div class="disabledImageWrapper mr-2">
+          <img src="/assets/logos/TeeFury2.png" class="border border-dark icon semitransparent">
+        </div>
+        
+        <img src="/assets/logos/TeeFury2.png" class="border border-dark icon mr-2">
+        -->
+
+        <p class="text-secondary">{{selectedDrawingTags}}</p>
+
+        <!-- Contact Me -->
+        <a [routerLink]="" (click)="openFacebook()">
+          <img src="/assets/icons/e-mail.png" class="icon">
+          <span class="align-middle">Contact Me</span>
+        </a>
+        
+      </div>
+
+    </div>
+
+  </div>
+
+</ng-template>
