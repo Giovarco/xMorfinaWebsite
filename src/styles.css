@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+html, body{
+    width:100%;
+    margin:0;
+    height:100%;
+}
+
+.noTextDecoration {
+    text-decoration: none !important;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    .text-sm-center {
+        text-align: center !important;
+    }
+
+    .h-sm-auto {
+        height: auto !important;
+    }
+
+}

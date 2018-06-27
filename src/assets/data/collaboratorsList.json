@@ -1,0 +1,72 @@
+[
+    {
+      "name" : "Qwertee",
+      "website" : "https://www.qwertee.com/",
+      "logoFile" : "Qwertee.png"
+    },
+    {
+      "name" : "TeeTee",
+      "website" : "https://www.teetee.eu/en/",
+      "logoFile" : "TeeTee.png"
+    },
+    {
+      "name" : "Pampling",
+      "website" : "https://www.pampling.com",
+      "logoFile" : "Pampling.png"
+    },
+    {
+      "name" : "Wistitee",
+      "website" : "https://www.wistitee.com/en/",
+      "logoFile" : "Wistitee.png"
+    },
+    {
+      "name" : "Othertees",
+      "website" : "https://www.othertees.com/",
+      "logoFile" : "Othertees.png"
+    },
+    {
+      "name" : "TeeFury",
+      "website" : "https://teefury.com",
+      "logoFile" : "TeeFury.png"
+    },
+    {
+      "name" : "ShirtPunch",
+      "website" : "https://www.shirtpunch.com",
+      "logoFile" : "ShirtPunch.png"
+    },
+    {
+      "name" : "RIPTapparel",
+      "website" : "https://www.riptapparel.com",
+      "logoFile" : "RIPTapparel.png"
+    },
+    {
+      "name" : "TheYeTee",
+      "website" : "https://theyetee.com/",
+      "logoFile" : "TheYeTee.png"
+    },
+    {
+      "name" : "TeeVillain",
+      "website" : "https://www.teevillain.com/",
+      "logoFile" : "TeeVillain.png"
+    },
+    {
+      "name" : "TeeTribe",
+      "website" : "https://teetribe.eu",
+      "logoFile" : "TeeTribe.png"
+    },
+    {
+      "name" : "TeeCraze",
+      "website" : "https://teecraze.com/",
+      "logoFile" : "TeeCraze.png"
+    },
+    {
+      "name" : "RedBubble",
+      "website" : "https://www.redbubble.com",
+      "logoFile" : "RedBubble.png"
+    },
+    {
+      "name" : "Loopslike",
+      "website" : "https://www.loopslike.com/en",
+      "logoFile" : "Loopslike.png"
+    }
+  ]

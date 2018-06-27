@@ -1,0 +1,58 @@
+<!-- Navigation Bar -->
+<app-navingation-bar></app-navingation-bar>
+
+<!-- Drawings showcase -->
+<div class="container">
+
+  <div class="row">
+
+    <!-- Details column -->
+    <div class="col-lg-7">
+
+      <!-- About -->
+      <div class="row section">
+        <div class="col">
+            <h1>About</h1>
+            <p>
+                My name is Elisa and I was born in 1992, in Italy.
+                Since I was kid, Fantasy world inspired me to draw.
+                I have always tried to keep pushing my limits as self-taught person and, growing up, I have never abandoned this passion.
+                Instead, I have strengthened it with love for nerd world!
+                <br><br>
+                Why did I enter the T-Shirt world? Well, because design and nerf world have synergy!
+            </p>
+        </div>
+      </div>
+
+      <!-- Commissions -->
+      <div class="row section">
+        <div class="col">
+            <h1>Commissions</h1>
+            <p >
+                If you want to commission a drawing or a design, feel free to contact me on my <a [routerLink]="" (click)="openFacebook()">Facebook Page</a>. I would be more than happy to help you!
+            </p>    
+        </div>
+      </div>
+
+      <!-- Collaborations -->
+      <div class="row section">
+        <div class="col">
+            <h1>Collaboration</h1>
+            <ng-container *ngFor="let collaborator of collaboratorList" >
+                <a [routerLink]="" (click)="this.tabOpenerService.open(collaborator.website);">
+                  <img src="/assets/logos/{{collaborator.logoFile}}" class="border border-dark icon mr-2 mb-2">
+                </a>
+            </ng-container>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Photo column -->
+    <div class="col-lg-5">
+      <img src="/assets/photos/xMorfina.jpg" class="w-100 d-none d-lg-block d-xl-block">
+    </div>
+
+  </div>
+
+</div>
