@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Drawing } from "../../interfaces/Drawing";
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { environment } from "../../environments/environment";
 import { catchError, retry } from 'rxjs/operators';
@@ -11,9 +11,9 @@ import { catchError, retry } from 'rxjs/operators';
 
 export class DrawingListService {
 
-  drawingsURL = "/rest/designs";
+  drawingsURL = "/rest/" + environment.drawingsCollectionName;
 
-  static orderByMostRecent(drawings: Drawing[]): Drawing[] {
+  orderByMostRecent(drawings: Drawing[]): Drawing[] {
 
     // Sort elements
     drawings.sort(function(a, b) {
@@ -74,6 +74,55 @@ export class DrawingListService {
     // return an observable with a user-facing error message
     return throwError(
       'Something bad happened; please try again later.');
+  }
+
+  uploadNewDrawing(drawing: Drawing, file: File): Observable<Drawing> {
+
+    // Prepare headers
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'cache-control': 'no-cache',
+        'x-apikey': environment.keys.restDB,
+        'content-type': 'application/json'
+      })
+    };
+
+    // Send POST request
+    const response: Observable<Drawing> = this.http.post<Drawing>(this.drawingsURL, drawing, httpOptions);
+    
+    // Handle possible request problems
+    response.pipe(
+      retry(3), // retry a failed request up to 3 times
+      catchError(this.handleError) // then handle the error
+    );
+
+    response.subscribe( test => {
+
+      console.log("test");
+      console.log(test);
+  
+      // Send POST request
+      const response2: Observable<Drawing> = this.http.post<Drawing>("assets/php/saveFile.php", file);
+      
+      // Handle possible request problems
+      response2.pipe(
+        retry(3), // retry a failed request up to 3 times
+        catchError(this.handleError) // then handle the error
+      );
+  
+      response2.subscribe( test2 => {
+        console.log("test2");
+        console.log(test2);
+      });
+      
+    });
+
+    return response;
+
+  }
+
+  private saveFileLocally() {
+    
   }
 
 }

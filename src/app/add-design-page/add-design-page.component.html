@@ -1,0 +1,51 @@
+<!-- Navigation Bar -->
+<app-navingation-bar></app-navingation-bar>
+
+<!-- Drawings showcase -->
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-sm-3">
+
+    </div>
+
+    <!-- Add design form -->
+    <div class="col-sm-9">
+
+      <form>
+
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title">
+        </div>
+
+        <div class="form-group">
+          <label for="Date">Date</label>
+          <input type="text" class="form-control" id="Date">
+        </div>
+
+        <!--
+        <ngb-datepicker name="dummyDatePicker" #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+        -->
+
+        <input class="form-control" placeholder="yyyy-mm-dd"
+        name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+ <div class="input-group-append">
+   <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+     <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+   </button>
+ </div>
+ 
+        <input type="file" (change)="setSelectedFile($event)">
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a (click)="uploadNewDrawing()">TEST</a>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
