@@ -11,6 +11,7 @@ import { catchError, retry } from 'rxjs/operators';
 
 export class DrawingListService {
 
+  // URL to add a collection
   drawingsURL = "/rest/" + environment.drawingsCollectionName;
 
   orderByMostRecent(drawings: Drawing[]): Drawing[] {
@@ -76,7 +77,20 @@ export class DrawingListService {
       'Something bad happened; please try again later.');
   }
 
-  uploadNewDrawing(drawing: Drawing, file: File): Observable<Drawing> {
+  uploadNewDrawing(drawing: Drawing, file: File): string {
+
+    try {
+      this.insertJsonIntoDrawings(drawing);
+      this.saveImageInAssetFolder(file);
+    } catch (e) {
+
+    }
+
+    return "response";
+
+  }
+
+  private insertJsonIntoDrawings(drawing: Drawing) {
 
     // Prepare headers
     const httpOptions = {
@@ -96,7 +110,11 @@ export class DrawingListService {
       catchError(this.handleError) // then handle the error
     );
 
-    response.subscribe( test => {
+  }
+
+  saveImageInAssetFolder(arg0: any): any {
+    
+/*     response.subscribe( test => {
 
       console.log("test");
       console.log(test);
@@ -104,7 +122,7 @@ export class DrawingListService {
       // Send POST request
       const response2: Observable<Drawing> = this.http.post<Drawing>("assets/php/saveFile.php", file);
       
-      // Handle possible request problems
+      // Handle possible request problemsng build
       response2.pipe(
         retry(3), // retry a failed request up to 3 times
         catchError(this.handleError) // then handle the error
@@ -115,14 +133,8 @@ export class DrawingListService {
         console.log(test2);
       });
       
-    });
+    }); */
 
-    return response;
-
-  }
-
-  private saveFileLocally() {
-    
   }
 
 }

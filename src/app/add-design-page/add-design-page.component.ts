@@ -28,10 +28,7 @@ export class AddDesignPageComponent implements OnInit {
       "date" : "2018-06-28",
       "tags" : ["tag44", "tag55", "tag66"],
       "file" : this.selectedFile.name
-    }, this.selectedFile)
-    .subscribe( drawing => {
-      console.log(drawing);
-    });
+    }, this.selectedFile);
     
   }
 
